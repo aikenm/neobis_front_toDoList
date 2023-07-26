@@ -1,14 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>toDoList</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-
+    <div class="container">
+        <h1>What's up, <span class="name">Aiken</span></h1>
+        <h4>CREATE A TODO</h4>
+        <h5>What's on your todo list?</h5>
+        <input type="text" class="taskInput" placeholder="e. g. get a milk">
+        <h5>Pick a category</h5>
+        <div class="radio-container">
+            <button class="business">
+                <input type="radio" class="option1" name="options">
+                <label for="option1">Business</label>
+            </button>
+            <button class="personal">
+                <input type="radio" class="option2" name="options">
+                <label for="option2">Personal</label>
+            </button>
+        </div>
+        <button class="add">Add todo</button>
+        <h4>TODO LIST</h4>
+        <ul class="taskList">
+        </ul>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
