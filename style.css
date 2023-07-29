@@ -24,7 +24,7 @@ body {
     color: #828282;
 }
 
-input {
+.taskInput {
     width: 96%;
     font-size: 16px;
     padding: 20px 10px;
@@ -49,24 +49,53 @@ input {
     text-align: center;
 }
 
-.business input {
+.business input[type="checkbox"] {
+    appearance: none;
     width: 20px;
     height: 20px;
+    border: 2px solid #0069ce;
     border-radius: 50%;
+    outline: none;
+    margin-right: 8px;
 }
+
+.business input[type="checkbox"]:checked {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 5px solid #0069ce;
+    border-radius: 50%;
+    outline: none;
+    margin-right: 8px;
+}
+
 
 .personal {
     height: 150px;
     font-size: 20px;
     border-radius: 10px;
     background-color: white;
-    text-align: center;
+    align-items: center;
 }
 
-.personal input {
+.personal input[type="checkbox"] {
+    appearance: none;
     width: 20px;
     height: 20px;
+    border: 2px solid #d8459c;
     border-radius: 50%;
+    outline: none;
+    margin-right: 8px;
+}
+
+.personal input[type="checkbox"]:checked {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 5px solid #d8459c;
+    border-radius: 50%;
+    outline: none;
+    margin-right: 8px;
 }
 
 .add {
@@ -74,7 +103,7 @@ input {
     height: 60px;
     margin-top: 20px;
     border-radius: 10px;
-    background-color: #2f6fd0;
+    background-color: #0069ce;
     opacity: 70%;
     color: white;
     font-size: 20px;
@@ -95,9 +124,31 @@ li {
     margin-bottom: 10px;
 }
 
-li input[type="radio"] {
+li input[type="checkbox"] {
+    appearance: none;
     width: 20px;
-    margin-left: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    margin-right: 8px;
+    margin-left: 15px;
+}
+
+.business-border input[type="checkbox"] {
+    border-color: #0069ce;
+}
+
+.business-border input[type="checkbox"]:checked {
+    border: 5px solid #0069ce;
+}
+
+.personal-border input[type="checkbox"] {
+    border-color: #d8459c;
+}
+
+.personal-border input[type="checkbox"]:checked {
+    border: 5px solid #d8459c;
 }
 
 li label {
@@ -108,17 +159,18 @@ li label {
 li button {
     height: 40px;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-right: 10px;
+    padding: 10px 20px;
     color: white;
 }
 
 .edit-button {
     margin-left: auto;
-    background-color: orange;
+    background-color: #d13995;
 }
 
 .delete-button {
     margin-right: 20px;
-    background-color: purple;
+    background-color: #e4534f;
 }

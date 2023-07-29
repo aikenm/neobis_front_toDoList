@@ -8,19 +8,19 @@
 
 <body>
     <div class="container">
-        <h1>What's up, <span class="name" id="editableName">Aiken</span></h1>
+        <h1>What's up, <span class="name" contenteditable="true" id="editableName">Your name</span></h1>
         <h4>CREATE A TODO</h4>
         <h5>What's on your todo list?</h5>
         <input type="text" class="taskInput" placeholder="e. g. get a milk">
         <h5>Pick a category</h5>
         <div class="radio-container">
             <div class="business">
-                <input type="radio" class="option1" name="options">
-                <label for="option1">Business</label>
+                <input type="checkbox" class="option1" id="businessRadio" onclick="onCheckboxClick('business')">
+                <label for="businessRadio">Business</label>
             </div>
             <div class="personal">
-                <input type="radio" class="option2" name="options">
-                <label for="option2">Personal</label>
+                <input type="checkbox" class="option2" id="personalRadio" onclick="onCheckboxClick('personal')">
+                <label for="personalRadio">Personal</label>
             </div>
         </div>
         <button class="add">Add todo</button>
