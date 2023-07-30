@@ -6,6 +6,8 @@ const todoListElement = document.getElementById('todoList');
 const businessCheckbox = document.getElementById('businessRadio');
 const personalCheckbox = document.getElementById('personalRadio');
 
+const MAX_CHARACTER_LIMIT = 27;
+
 let todoList = [];
 
 // Function for making the user name editable
@@ -28,15 +30,25 @@ function onCheckboxClick(selectedCategory) {
     }
 }
 
+// Function ensures that the user cannot input more characters than the specified
+addTask.addEventListener('input', function () {
+    const inputValue = this.value.trim();
+    if (inputValue.length > MAX_CHARACTER_LIMIT) {
+        this.value = inputValue.substring(0, MAX_CHARACTER_LIMIT);
+    }
+});
+
 // Function for adding a new task
 addButton.addEventListener('click', function () {
     const newTaskName = addTask.value.trim();
-    if (newTaskName !== '') {
+    const selectedCategory = businessRadio.checked ? 'business' : (personalRadio.checked ? 'personal' : '');
+
+    if (newTaskName !== '' && selectedCategory !== '') {
         const existingTaskIndex = todoList.findIndex(task => task.todo === newTaskName);
         const newTodo = {
             todo: newTaskName,
             checked: existingTaskIndex !== -1 ? todoList[existingTaskIndex].checked : false,
-            category: businessRadio.checked ? 'business' : 'personal'
+            category: selectedCategory
         };
         todoList.push(newTodo);
         displayList();
@@ -44,8 +56,11 @@ addButton.addEventListener('click', function () {
 
         businessRadio.checked = false;
         personalRadio.checked = false;
+    } else {
+        // Display a message or take appropriate action to indicate that a category must be chosen.
     }
 });
+
 
 // Function for handling clicks on the task list container
 todo.addEventListener('click', function (event) {
@@ -85,19 +100,29 @@ function toggleEditTask(button) {
 
     if (isEditable) {
         label.setAttribute('contentEditable', 'false');
-        todoList[taskId].todo = label.textContent;
+        todoList[taskId].todo = label.textContent.trim();
         displayList();
     } else {
         label.setAttribute('contentEditable', 'true');
         label.focus();
+
         const range = document.createRange();
         const sel = window.getSelection();
         range.selectNodeContents(label);
         range.collapse(false);
         sel.removeAllRanges();
         sel.addRange(range);
+
+        label.addEventListener('input', function () {
+            const newTodoName = this.textContent.trim();
+            if (newTodoName.length > MAX_CHARACTER_LIMIT) {
+                this.textContent = newTodoName.substring(0, MAX_CHARACTER_LIMIT);
+            }
+        });
     }
 }
+
+
 
 // Function to update the name of a task in the todoList array and update the display
 function updateTask(taskId, newTodoName) {

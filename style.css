@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #efefef;
 }
 
@@ -32,70 +32,80 @@ body {
 }
 
 .radio-container {
-    height: 150px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 50px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .business {
     grid-area: 1 / 1 / 2 / 2;
     font-size: 20px;
     border-radius: 10px;
-    height: 150px;
+    height: 140px;
     background-color: white;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .business input[type="checkbox"] {
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border: 2px solid #0069ce;
+    box-shadow: 0px 0px 18px 0px rgba(0, 105, 206, 0.46);
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 105, 206, 0.46);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(0, 105, 206, 0.46);
     border-radius: 50%;
-    outline: none;
-    margin-right: 8px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .business input[type="checkbox"]:checked {
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border: 5px solid #0069ce;
+    box-shadow: 0px 0px 18px 0px rgba(0, 105, 206, 0.46);
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 105, 206, 0.46);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(0, 105, 206, 0.46);
     border-radius: 50%;
-    outline: none;
-    margin-right: 8px;
 }
 
-
 .personal {
-    height: 150px;
+    height: 140px;
     font-size: 20px;
     border-radius: 10px;
     background-color: white;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
 .personal input[type="checkbox"] {
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border: 2px solid #d8459c;
+    box-shadow: 0px 0px 18px 0px rgba(216, 69, 156, 0.46);
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(216, 69, 156, 0.46);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(216, 69, 156, 0.46);
     border-radius: 50%;
-    outline: none;
-    margin-right: 8px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .personal input[type="checkbox"]:checked {
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border: 5px solid #d8459c;
+    box-shadow: 0px 0px 18px 0px rgba(216, 69, 156, 0.46);
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(216, 69, 156, 0.46);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(216, 69, 156, 0.46);
     border-radius: 50%;
-    outline: none;
-    margin-right: 8px;
 }
 
 .add {
@@ -126,29 +136,41 @@ li {
 
 li input[type="checkbox"] {
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border: 2px solid #ccc;
     border-radius: 50%;
     outline: none;
-    margin-right: 8px;
+    margin-right: 15px;
     margin-left: 15px;
 }
 
 .business-border input[type="checkbox"] {
     border-color: #0069ce;
+    box-shadow: 0px 0px 18px 0px rgba(0, 105, 206, 0.46);
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 105, 206, 0.46);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(0, 105, 206, 0.46);
 }
 
 .business-border input[type="checkbox"]:checked {
     border: 5px solid #0069ce;
+    box-shadow: 0px 0px 18px 0px rgba(0, 105, 206, 0.46);
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 105, 206, 0.46);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(0, 105, 206, 0.46);
 }
 
 .personal-border input[type="checkbox"] {
     border-color: #d8459c;
+    box-shadow: 0px 0px 18px 0px rgba(216, 69, 156, 0.46);
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(216, 69, 156, 0.46);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(216, 69, 156, 0.46);
 }
 
 .personal-border input[type="checkbox"]:checked {
     border: 5px solid #d8459c;
+    box-shadow: 0px 0px 18px 0px rgba(216, 69, 156, 0.46);
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(216, 69, 156, 0.46);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(216, 69, 156, 0.46);
 }
 
 li label {
