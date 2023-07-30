@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>#1</h4>
+
+    <div id="string-1">Ядра в вёдра, выдру в тундру!</div>
+    <div id="string-2">Выдрав с выдры в тундре гетры</div>
+    <div id="string-3">В недрах тундры, выдры в гетрах </div>
+    <div id="string-4">Вытру гетрой выдре морду </div>
+    <div id="string-5">Тырят в вёдра ядра кедров!</div>
+    <div id="string-6">Вытру выдрой ядра кедров</div>
+
+    <script>
+        console.log(document.getElementById('string-3').textContent.trim());
+        console.log(document.getElementById('string-5').textContent.trim());
+        console.log(document.getElementById('string-2').textContent.trim());
+        console.log(document.getElementById('string-6').textContent.trim());
+        console.log(document.getElementById('string-4').textContent.trim());
+        console.log(document.getElementById('string-1').textContent.trim());
+    </script>
+
+    <h4>#2</h4>
+
+    <div class="element">Element 1</div>
+    <div class="element">Element 2</div>
+    <div class="element">Element 3</div>
+    <div class="element">Element 4</div>
+    <div class="element">Element 5</div>
+    <div class="element">Element 6</div>
+
+    <script>
+        const elements = document.querySelectorAll('.element');
+
+        for (let i = 0; i < elements.length; i++) {
+            if (i < 3) {
+                elements[i].style.color = 'red';
+            } else {
+                elements[i].style.color = 'green';
+            }
+        }
+    </script>
+
+    <h4>#3</h4>
+
+    <ol id="todo-list">
+    </ol>
+
+    <script>
+        const tasks = ['Buy lemonade', 'Make toasts', 'Repair car', 'Play games', 'Pet a cat'];
+
+        const todoList = document.getElementById('todo-list');
+
+        for (const taskText of tasks) {
+            const li = document.createElement('li');
+            li.className = 'task';
+            li.textContent = taskText;
+            todoList.appendChild(li);
+        }
+    </script>
+
+    <h4>#4</h4>
+
+    <article>
+        <h3>What is Lorem Ipsum?</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages.</p>
+        <h3>Where does it come from?</h3>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+            literature from 45 BC, making it over 2000 years old. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
+            amet..", comes from a line in section 1.10.32. from "The Extremes of Good and Evil" by Cicero</p>
+        <h3>Why do we use it?</h3>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
+            at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+            as opposed to using 'Content here, content here', making it look like readable English.</p>
+    </article>
+
+    <script>
+        const paragraphs = document.querySelectorAll('article p');
+
+        paragraphs.forEach((paragraph) => {
+            const hr = document.createElement('hr');
+            paragraph.insertAdjacentElement('afterend', hr);
+        });
+    </script>
+
+    <h4>#5</h4>
+
+    <div id="cart-items">
+        <div class="item">Milk 1 l.<span class="qty">x 2</span></div>
+        <div class="item">Cola 1.5 l. <span class="qty">x 1</span></div>
+        <div class="item">Bread <span class="qty">x 2</span></div>
+        <div class="item">Cheese <span class="qty">x 1</span></div>
+        <div class="item">Chocolate bar <span class="qty">x 3</span></div>
+    </div>
+
+    <script>
+        const cartItems = document.getElementById('cart-items');
+        const colaItem = document.querySelector('.item:nth-child(2)');
+        colaItem.remove();
+
+        const chocolateBarItem = document.querySelector('.item:nth-child(4)');
+        chocolateBarItem.textContent = 'Canned Fish ';
+
+        const newQtySpan = document.createElement('span');
+        newQtySpan.className = 'qty';
+        newQtySpan.textContent = 'x 4';
+        chocolateBarItem.appendChild(newQtySpan);
+    </script>
+
+    <h4>#6</h4>
+
+    <ul id="list"></ul>
+
+    <script>
+        const list = document.getElementById('list');
+
+        while (true) {
+            const listItemContent = prompt('Введите содержимое пункта списка:');
+
+            if (listItemContent === null || listItemContent.trim() === '') {
+                break;
+            }
+
+            const listItem = document.createElement('li');
+            listItem.textContent = listItemContent;
+
+            list.appendChild(listItem);
+        }
+    </script>
+</body>
+
+</html>
